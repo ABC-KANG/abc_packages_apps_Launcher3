@@ -45,6 +45,8 @@ LOCAL_SRC_FILES += \
 
 LOCAL_CERTIFICATE := platform
 
+LOCAL_DEX_PREOPT=false
+
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res \
     prebuilts/sdk/current/support/v7/recyclerview/res \
