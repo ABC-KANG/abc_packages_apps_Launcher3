@@ -372,13 +372,6 @@ public class IconsHandler {
 
     // Get the first icon pack parsed icon for reset purposes
     Drawable getResetIconDrawable(Context context, LauncherActivityInfo app, ItemInfo info) {
-        if (isDefaultIconPack()) {
-            Drawable d = getRoundIcon(context, info.getTargetComponent().getPackageName(), LauncherAppState.getIDP(context).fillResIconDpi);
-            if (d == null) {
-                app.getIcon(LauncherAppState.getIDP(context).fillResIconDpi);
-            }
-        }
-
         final Drawable icon = new BitmapDrawable(context.getResources(), getDrawableIconForPackage(info.getTargetComponent()));
         return new BitmapDrawable(context.getResources(), LauncherIcons.createBadgedIconBitmap(icon, info.user, context, Build.VERSION_CODES.O));
     }
