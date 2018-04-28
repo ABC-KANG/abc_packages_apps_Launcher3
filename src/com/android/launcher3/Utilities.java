@@ -138,6 +138,7 @@ public final class Utilities {
     private static final boolean TOP_SEARCH_BAR_DEFAULT = true;
 
     public static final String KEY_SHOW_SWIPEUP_ARROW = "pref_show_swipeup_arrow";
+    public static final String KEY_SHOW_HOTSEAT_PREFERENCE = "pref_hotSeat";
 
     public static final String GRID_COLUMNS = "pref_grid_columns";
     public static final String GRID_ROWS = "pref_grid_rows";
@@ -156,6 +157,11 @@ public final class Utilities {
 
     public static boolean showSwipeUpIndicator(Context context) {
         return getPrefs(context).getBoolean(KEY_SHOW_SWIPEUP_ARROW,
+                true);
+    }
+
+    public static boolean isShowHotseat(Context context) {
+        return getPrefs(context).getBoolean(KEY_SHOW_HOTSEAT_PREFERENCE,
                 true);
     }
 

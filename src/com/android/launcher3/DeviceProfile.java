@@ -151,6 +151,7 @@ public class DeviceProfile {
 
     // Icon badges
     public BadgeRenderer mBadgeRenderer;
+    private Context mContext;
 
     public DeviceProfile(Context context, InvariantDeviceProfile inv,
             Point minSize, Point maxSize,
@@ -171,6 +172,7 @@ public class DeviceProfile {
         transposeLayoutWithOrientation =
                 res.getBoolean(R.bool.hotseat_transpose_layout_with_orientation);
 
+        mContext = context;
         context = getContext(context, isVerticalBarLayout()
                 ? Configuration.ORIENTATION_LANDSCAPE
                 : Configuration.ORIENTATION_PORTRAIT);
@@ -216,10 +218,7 @@ public class DeviceProfile {
 
         workspaceCellPaddingXPx = res.getDimensionPixelSize(R.dimen.dynamic_grid_cell_padding_x);
 
-        hotseatBarTopPaddingPx =
-                res.getDimensionPixelSize(R.dimen.dynamic_grid_hotseat_top_padding);
-
-        hotseatBarTopPaddingPx = Utilities.isBottomSearchBarVisible(context)
+        hotseatBarTopPaddingPx = Utilities.isBottomSearchBarVisible(context) || !Utilities.showSwipeUpIndicator(context)
                 ? res.getDimensionPixelSize(R.dimen.dynamic_grid_hotseat_top_padding)
                 : res.getDimensionPixelSize(R.dimen.dynamic_grid_hotseat_top_padding_hidden_bottom_qsb);
         hotseatBarBottomPaddingPx = Utilities.isBottomSearchBarVisible(context)
@@ -235,11 +234,12 @@ public class DeviceProfile {
         hotseatBarSizePx = isVerticalBarLayout()
                 ? Utilities.pxFromDp(inv.iconSize, dm)
                 : res.getDimensionPixelSize(R.dimen.dynamic_grid_hotseat_size)
-                        + hotseatBarTopPaddingPx + hotseatBarBottomPaddingPx;
+                        ;
+        hotseatBarSizePx = Utilities.isShowHotseat(mContext) ? hotseatBarSizePx : 0;
 
         mBottomMarginHw = res.getDimensionPixelSize(R.dimen.qsb_hotseat_bottom_margin_hw);
         if (!isVerticalBarLayout()) {
-            hotseatBarSizePx += mBottomMarginHw;
+            hotseatBarSizePx += mBottomMarginHw + hotseatBarTopPaddingPx + hotseatBarBottomPaddingPx;
             hotseatBarBottomPaddingPx += mBottomMarginHw;
         }
 

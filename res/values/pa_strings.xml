@@ -35,4 +35,9 @@
     <string name="icon_search">Search for icons</string>
 
     <string name="icon_pack_updated">Your launcher icon pack has been updated, new icons for your apps might be available.</string>
+
+    <!-- Dock visibility -->
+    <string name="show_hotseat_title">Dock icons</string>
+    <string name="show_hotseat_summary">Show the icons in the dock</string>
+
 </resources>

@@ -96,6 +96,8 @@ public class HomeScreenActivity extends com.android.launcher3.SettingsActivity i
             mShowClockWeather = (ListPreference) findPreference(KEY_SHOW_WEATHER_CLOCK);
 
             findPreference(Utilities.BOTTOM_SEARCH_BAR_KEY).setOnPreferenceChangeListener(this);
+            findPreference(Utilities.KEY_SHOW_HOTSEAT_PREFERENCE).setOnPreferenceChangeListener(this);
+            findPreference(Utilities.KEY_SHOW_SWIPEUP_ARROW).setOnPreferenceChangeListener(this);
 
             findPreference(Utilities.GRID_COLUMNS).setOnPreferenceChangeListener(this);
             findPreference(Utilities.GRID_ROWS).setOnPreferenceChangeListener(this);
@@ -161,6 +163,8 @@ public class HomeScreenActivity extends com.android.launcher3.SettingsActivity i
         public boolean onPreferenceChange(Preference preference, final Object newValue) {
             switch (preference.getKey()) {
                 case Utilities.BOTTOM_SEARCH_BAR_KEY:
+                case Utilities.KEY_SHOW_HOTSEAT_PREFERENCE:
+                case Utilities.KEY_SHOW_SWIPEUP_ARROW:
                     if (preference instanceof TwoStatePreference) {
                         ((TwoStatePreference) preference).setChecked((boolean) newValue);
                     }

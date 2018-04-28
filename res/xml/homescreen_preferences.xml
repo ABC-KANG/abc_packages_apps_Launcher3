@@ -14,6 +14,13 @@
         android:defaultValue="true" />
 
     <SwitchPreference
+        android:key="pref_hotSeat"
+        android:title="@string/show_hotseat_title"
+        android:summary="@string/show_hotseat_summary"
+        android:defaultValue="true"
+        android:persistent="true" />
+
+    <SwitchPreference
         android:key="pref_bottom_search_bar"
         android:title="@string/bottom_search_bar_title"
         android:summary="@string/bottom_search_bar_summary"

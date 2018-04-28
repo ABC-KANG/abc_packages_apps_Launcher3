@@ -255,7 +255,7 @@
     <dimen name="all_apps_extra_search_padding">8dp</dimen>
 
     <!-- Hide/Show search bars -->
-    <dimen name="dynamic_grid_hotseat_top_padding_hidden_bottom_qsb">8dp</dimen>
+    <dimen name="dynamic_grid_hotseat_top_padding_hidden_bottom_qsb">4dp</dimen>
     <dimen name="dynamic_grid_hotseat_bottom_padding_hidden_bottom_qsb">0dp</dimen>
 
 </resources>
