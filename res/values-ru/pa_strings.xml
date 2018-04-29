@@ -33,4 +33,9 @@
     <string name="loading">Идет загрузка, пожалуйста, подождите</string>
     <string name="icon_chooser">Выбор значка</string>
     <string name="icon_search">Поиск значков</string>
+
+    <!-- Dock visibility -->
+    <string name="show_hotseat_title">Значки док-бара</string>
+    <string name="show_hotseat_summary">Отображать значки приложений в док-баре</string>
+
 </resources>
