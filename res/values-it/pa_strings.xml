@@ -33,4 +33,6 @@
   <string name="loading">Caricamento, attendere prego</string>
   <string name="icon_chooser">Scelta icona</string>
   <string name="icon_search">Cerca icone</string>
+  <string name="show_hotseat_title">Attiva dock bar</string>
+  <string name="show_hotseat_summary">Mostra le icone della dock</string>
 </resources>
