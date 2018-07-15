@@ -22,6 +22,7 @@
     <string name="default_iconpack_title">По умолчанию</string>
     <string name="icons_pack_name">Набор значков</string>
     <string name="edit_drop_target_label">Редактировать</string>
+    <string name="edit_hint">Подпись значка</string>
     <string name="edit_app">Редактировать</string>
     <string name="reset_icon">Сброс</string>
     <string name="customize">Настройка</string>
